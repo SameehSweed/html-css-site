@@ -1,0 +1,115 @@
+.grid-container {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    grid-gap: 10px;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    border: 5px solid black;
+    margin: 1em auto 1em auto;
+  }
+  
+  .grid-gallery {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .text-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+    opacity: 0;
+    color: #cbcaca;
+    transition: ease-in-out 300ms;
+  }
+  
+  figure:nth-of-type(1) {
+    grid-column: span 2;
+  }
+  figure:nth-of-type(2) {
+    grid-column: span 3;
+  }
+  figure:nth-of-type(3) {
+    grid-column: span 3;
+  }
+  figure:nth-of-type(4) {
+    grid-column: span 2;
+  }
+  figure:nth-of-type(5) {
+    grid-column: span 5;
+  }
+  figure:nth-of-type(6) {
+    grid-column: span 2;
+  }
+  figure:nth-of-type(7) {
+    grid-column: span 3;
+  }
+  figure:nth-of-type(8) {
+    grid-column: span 5;
+  }
+  figure:nth-of-type(9) {
+    grid-column: span 3;
+  }
+  figure:nth-of-type(10) {
+    grid-column: span 2;
+  }
+  
+  img {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+    transition: ease-in-out 300ms;
+  }
+  
+  .grid-gallery:hover img {
+    opacity: 0.5;
+    transition: ease-in-out 300ms;
+    scale: 1.1;
+  }
+  
+  .grid-gallery:hover .text-img {
+    opacity: 1;
+    transition: ease-in-out 300ms;
+  }
+  
+  @media (max-width: 860px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+      min-height: 100vh;
+    }
+    figure:nth-of-type(odd) {
+      grid-column: span 1;
+    }
+  
+    figure:nth-of-type(even) {
+      grid-column: span 1;
+    }
+    figure:nth-of-type(3) {
+      grid-column: span 2;
+    }
+  }
+  @media (max-width: 680px) {
+    .grid-container {
+      grid-template-columns: repeat(1, 1fr);
+      min-height: 100vh;
+    }
+    figure:nth-of-type(odd) {
+      grid-column: span 1;
+    }
+  
+    figure:nth-of-type(even) {
+      grid-column: span 1;
+    }
+  }
+  
